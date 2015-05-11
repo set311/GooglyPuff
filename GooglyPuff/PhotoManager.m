@@ -43,7 +43,6 @@
 
 - (void)addPhoto:(Photo *)photo
 {
-    if (photo) {
         if (photo) { // 1
             dispatch_barrier_async(self.concurrentPhotoQueue, ^{ // 2
                 [_photosArray addObject:photo]; // 3
@@ -52,7 +51,6 @@
                 });
             });
         }
-    }
 }
 
 //*****************************************************************************/
